@@ -14,4 +14,8 @@
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\ProductImages\background.jpg" />
+  </ItemGroup>
+
 </Project>
