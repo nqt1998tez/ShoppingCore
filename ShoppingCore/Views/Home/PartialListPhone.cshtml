@@ -1,0 +1,19 @@
+﻿@using ShoppingCore.Models.Db;
+@model IEnumerable<Product>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+
+<div class="row">
+    @foreach (var item in Model.OrderBy(n => n.Cost))
+    {
+        <div class="col-4">
+            <img src="/ProductImages/abc.jpg" class="img-thumbnail " />
+            <p>@item.Name</p>
+        </div>
+    }
+ 
+</div>
