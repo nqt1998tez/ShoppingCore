@@ -1,27 +1,27 @@
 ﻿@using ShoppingCore.Models.Db;
-@model IEnumerable<Product>
+@model  IEnumerable<Product>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutLive.cshtml";
     var ListPhone = (IEnumerable<Product>)ViewBag.ListPhone;
     var ListLaptop = (IEnumerable<Product>)ViewBag.ListLaptop;
     var ListTab = (IEnumerable<Product>)ViewBag.ListTab;
 }
 
-@await Html.PartialAsync("PartialListPhone",ListPhone)
-<div class="row">
-    <div class="col-12">
-        <h1 style="text-align:center">New Laptop</h1>
+<div class="content">
+    <div class="container">
+        <div class="content-top">
+            <h1>NEW RELEASED</h1>
+            @await Html.PartialAsync("ListPhonePartial", ListPhone);
+        </div>
+        <div class="content-top-bottom">
+            <h2>Featured Collections</h2>
+            @await Html.PartialAsync("ListLaptopPartial", ListLaptop);
+            <div class="clearfix"> </div>
+        </div>
     </div>
-</div>
-<div class="row">
-    @await Html.PartialAsync("PartialListLaptop", ListLaptop);
-</div>
-<div class="row">
-    <div class="col-12">
-        <h1 style="text-align: center">New Tab</h1>
+
+    <div class="content-bottom">
+        @await Html.PartialAsync("ListTabPartial", ListTab);
     </div>
-</div>
-<div class="row">
-    @await Html.PartialAsync("PartialListTab",ListTab)
 </div>

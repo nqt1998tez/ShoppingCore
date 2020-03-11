@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ShoppingCore.Models.Db.Product>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+    <ul>
+        @foreach (var item in Model.Take(6).OrderBy(n=>n.Cost))
+        {
+            <li><a href="#"><img class="img-responsive" src="@Url.Content("/ProductImages/"+item.Picture)" alt="" style="width:221px;height:120px;"></a></li>
+          
+        }
+        <div class="clearfix"> </div>
+    </ul>

@@ -1,0 +1,23 @@
+﻿@using ShoppingCore.Models.Db;
+@model IEnumerable<Product>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="grid-in">
+    @foreach (var item in Model.Take(3))
+    {
+        <div class="col-md-4 grid-top">
+            <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                <img class="img-responsive" src="@Url.Content("/ProductImages/"+item.Picture)" alt="" style="width:350px;height:356px;">
+                <div class="b-wrapper">
+                    <h3 class="b-animate b-from-left    b-delay03 ">
+                        <span>@item.Name</span>
+                    </h3>
+                </div>
+            </a>
+            <p><a href="single.html">undoubtable</a></p>
+        </div>
+    }
+    <div class="clearfix"> </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@using ShoppingCore.Models.Db;
+@model IEnumerable<Product>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<div class="col-md-6 men">
+    <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+        <img class="img-responsive" src="@Url.Content("/ProductImages/"+Model.ElementAt(0).Picture)" alt="" style="width:540px;height:429px;">
+        <div class="b-wrapper">
+            <h3 class="b-animate b-from-top top-in   b-delay03 ">
+                <span>@Model.ElementAt(0).Name</span>
+            </h3>
+        </div>
+    </a>
+
+
+</div>
+<div class="col-md-6">
+    <div class="col-md1 ">
+        <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+            <img class="img-responsive" src="@Url.Content("/ProductImages/"+Model.ElementAt(1).Picture)" alt="" style="width:540px;height:203px;">
+            <div class="b-wrapper">
+                <h3 class="b-animate b-from-top top-in1   b-delay03 ">
+                    <span>@Model.ElementAt(1).Name</span>
+                </h3>
+            </div>
+        </a>
+
+    </div>
+    <div class="col-md2">
+        <div class="col-md-6 men1">
+            <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                <img class="img-responsive" src="@Url.Content("/ProductImages/"+Model.ElementAt(2).Picture)" alt="" style="width:255px;height:196px;">
+                <div class="b-wrapper">
+                    <h3 class="b-animate b-from-top top-in2   b-delay03 ">
+                        <span>@Model.ElementAt(2).Name</span>
+                    </h3>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-md-6 men2">
+            <a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+                <img class="img-responsive" src="@Url.Content("/ProductImages/"+Model.ElementAt(3).Picture)" alt="" style="width:255px;height:196px;">
+                <div class="b-wrapper">
+                    <h3 class="b-animate b-from-top top-in2   b-delay03 ">
+                        <span>@Model.ElementAt(3).Name</span>
+                    </h3>
+                </div>
+            </a>
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>

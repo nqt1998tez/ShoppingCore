@@ -1,0 +1,7 @@
+﻿@model IEnumerable<ShoppingCore.Models.ViewModels.ProducerViewModel>
+@foreach (var item in Model)
+{
+    <ul>
+        <li><a href="products.html">@item.Name</a></li>
+    </ul>
+}

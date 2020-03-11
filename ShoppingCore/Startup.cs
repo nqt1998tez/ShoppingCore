@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using ShoppingCore.Models.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using ShoppingCore.Services;
 
 namespace ShoppingCore
 {
@@ -28,6 +29,7 @@ namespace ShoppingCore
             services.AddMvc();
             string shoppingConn = Configuration.GetConnectionString("ShoppingContext");
             services.AddDbContext<ShoppingContext>(opts => opts.UseSqlServer(shoppingConn));
+            services.AddScoped<CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
