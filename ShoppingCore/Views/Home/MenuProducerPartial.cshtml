@@ -2,6 +2,6 @@
 @foreach (var item in Model)
 {
     <ul>
-        <li><a href="products.html">@item.Name</a></li>
+        <li><a href="@Url.Action("Index","Product",new {@producerId=item.ProducerId })">@item.Name</a></li>
     </ul>
 }

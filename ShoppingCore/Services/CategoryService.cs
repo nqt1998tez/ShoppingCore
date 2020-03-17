@@ -34,7 +34,7 @@ namespace ShoppingCore.Services
             }
             return categories;
         }
-        public List<ProducerViewModel> GetProductByCategoryId(int categoryId)
+        public List<ProducerViewModel> GetProducerByCategoryId(int categoryId)
         {
             var Producers = new List<ProducerViewModel>();
             using (var conn = new SqlConnection(this._db.Database.GetDbConnection().ConnectionString))
@@ -51,6 +51,22 @@ namespace ShoppingCore.Services
                 conn.Close();
             }
             return Producers;
+        }
+        public List<ProductViewModel>getProductByProducer(int producerId)
+        {
+            var Products = new List<ProductViewModel>();
+            using (var conn = new SqlConnection(this._db.Database.GetDbConnection().ConnectionString))
+            {
+                conn.Open();
+                Products = conn.Query<ProductViewModel>(@"
+                                                           select p.*
+                                                            from Product p
+                                                            join Producer pd on p.ProducerId=pd.ProducerId
+                                                            where pd.ProducerId="+producerId).ToList();
+
+                conn.Close();
+            }
+            return Products;
         }
     }
 }

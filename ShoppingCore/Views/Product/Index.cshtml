@@ -1,0 +1,27 @@
+﻿@using ShoppingCore.Models.ViewModels;
+@model IEnumerable<ProductViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_layoutProduct.cshtml";
+}
+
+
+<h2>@ViewData["Message"]</h2>
+@*<div class=" bottom-product">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 bottom-cd simpleCart_shelfItem">
+            <div class="product-at ">
+                <a href="single.html">
+                    <img class="img-responsive" src="@Url.Content("/ProductImages/"+item.Picture)" alt="">
+                    <div class="pro-grid">
+                        <span class="buy-in">Buy Now</span>
+                    </div>
+                </a>
+            </div>
+            <p class="tun">@item.Name</p>
+            <a href="#" class="item_add"><p class="number item_price"><i> </i>@item.Cost.ToString("#,##") VNĐ</p></a>
+        </div>
+    }
+    <div class="clearfix"> </div>
+</div>*@
